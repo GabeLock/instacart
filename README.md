@@ -6,6 +6,29 @@ O objetivo e simular uma solucao real de dados para analisar pedidos de clientes
 
 > Importante: o dataset da Instacart e historico e estatico. A ingestao diaria deste projeto sera uma simulacao realista para fins de arquitetura e portfolio. Os pedidos existentes serao liberados progressivamente por um criterio tecnico controlado, como `order_number`, `days_since_prior_order` e uma data simulada de processamento. O projeto nao usa, nem inventa, uma API real da Instacart.
 
+## Preview do dashboard Streamlit
+
+O dashboard ja possui uma primeira versao executavel em `src/dashboard/app.py`. Enquanto os dados reais do Kaggle e a camada gold ainda nao forem processados, a aplicacao usa uma base demonstrativa deterministica para apresentar a experiencia final esperada.
+
+Resultados exibidos no preview atual:
+
+| Indicador | Valor |
+| --- | ---: |
+| Pedidos ingeridos | 59.700 |
+| Itens ingeridos | 238.800 |
+| Tamanho medio da cesta | 4,00 |
+| Ultima data simulada | 10/01/2026 |
+
+Principais leituras do preview:
+
+- a ingestao diaria simulada cresce de 4.200 para 7.600 pedidos por dia;
+- `Banana`, `Bag of Organic Bananas` e `Organic Strawberries` aparecem como produtos mais comprados;
+- produtos recorrentes como `Banana` e `Bag of Organic Bananas` lideram a taxa de recompra;
+- `produce` e `dairy eggs` concentram maior volume e relevancia de recompra;
+- a area de previsao de proxima compra ja permite selecionar um usuario e exibir recomendacoes de recompra.
+
+Mais detalhes: [docs/dashboard_results.md](docs/dashboard_results.md)
+
 ## Problema de negocio
 
 Empresas de varejo precisam entender padroes de recompra, recorrencia de consumo e preferencias dos clientes para melhorar recomendacoes, reposicao de estoque, campanhas e experiencia de compra.
@@ -147,4 +170,3 @@ Ele exibira:
 - Adicionar validacoes e testes.
 - Treinar modelos e publicar metricas.
 - Criar dashboard Streamlit e relatorio em R.
-
