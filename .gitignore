@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Data and artifacts
+data/raw/*
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/raw/.gitkeep
+!data/bronze/.gitkeep
+!data/silver/.gitkeep
+!data/gold/.gitkeep
+models/
+artifacts/
+logs/
+*.duckdb
+*.db
+*.parquet
+*.zip
+*.csv
+
+# Kaggle credentials
+kaggle.json
+.kaggle/
+
+# Notebooks and reports
+.ipynb_checkpoints/
+reports/*.html
+reports/*.pdf
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

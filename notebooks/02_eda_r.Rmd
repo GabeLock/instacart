@@ -1,0 +1,13 @@
+---
+title: "Instacart Market Basket Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Objetivo
+
+Este relatorio complementara o dashboard com EDA estatistica, analise de recompra, distribuicao de pedidos por usuario, tamanho de cesta e comportamento por departamento.
+
