@@ -8,6 +8,7 @@ Esta pagina documenta os resultados apresentados na primeira versao executavel d
 - URL local usada no teste: `http://127.0.0.1:8501`
 - Modo atual: demonstracao
 - Objetivo: permitir visualizacao do produto analitico antes da ingestao real via Kaggle API
+- Evolucao recente: dashboard interativo com afinidade de produtos, grupos de compra, analise por horario e tabela dinamica
 
 O dashboard foi construido para tentar carregar arquivos Parquet da camada `data/gold`. Quando os marts ainda nao existem, ele usa uma base demonstrativa deterministica, sem inventar dados reais da Instacart.
 
@@ -48,6 +49,43 @@ O dashboard foi construido para tentar carregar arquivos Parquet da camada `data
 | Organic Raspberries | 842 | 55% |
 | Organic Whole Milk | 788 | 67% |
 
+## Afinidade de produtos
+
+O usuario pode escolher um produto no filtro lateral e responder perguntas como:
+
+- quem compra `Banana` tambem tem tendencia de comprar qual item;
+- quais sao os dois produtos com maior chance de combinar com o item escolhido;
+- qual combinacao possui maior `lift`, indicando associacao acima do esperado.
+
+Exemplo para `Banana` no preview:
+
+| Produto combinado | Pedidos juntos | Chance de sair junto | Lift |
+| --- | ---: | ---: | ---: |
+| Organic Strawberries | 820 | 44% | 1,82 |
+| Organic Whole Milk | 730 | 39% | 1,61 |
+| Organic Hass Avocado | 690 | 37% | 1,54 |
+
+## Grupos de produtos
+
+O dashboard apresenta grupos de produtos que mais saem juntos, como:
+
+| Grupo | Produtos | Pedidos |
+| --- | --- | ---: |
+| Frutas organicas | Banana, Organic Strawberries, Organic Raspberries | 940 |
+| Cafe da manha | Banana, Organic Whole Milk, Organic Strawberries | 810 |
+| Salada fresca | Organic Baby Spinach, Organic Hass Avocado, Large Lemon | 760 |
+
+## Analise por horario
+
+A tela permite selecionar qualquer horario entre 00:00 e 23:00. Exemplos do preview:
+
+| Horario | Produto lider esperado |
+| ---: | --- |
+| 09:00 | Banana |
+| 17:00 | Organic Baby Spinach |
+
+Tambem ha um mapa de calor cruzando hora do dia e produto, ajudando a identificar padroes de consumo por faixa horaria.
+
 ## Departamentos relevantes
 
 | Departamento | Pedidos | Taxa de recompra |
@@ -61,7 +99,7 @@ O dashboard foi construido para tentar carregar arquivos Parquet da camada `data
 
 ## Recomendacao de recompra
 
-Na versao atual, a recomendacao usa uma ordenacao simples por taxa de recompra e volume historico. Nas proximas fases, essa area sera conectada aos modelos de baseline, scikit-learn e LightGBM/XGBoost.
+Na versao atual, a recomendacao usa a afinidade do produto selecionado, combinando chance de compra conjunta, lift e volume de pedidos juntos. Nas proximas fases, essa area sera conectada aos modelos de baseline, scikit-learn e LightGBM/XGBoost.
 
 Produtos recomendados no preview:
 

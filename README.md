@@ -25,7 +25,10 @@ Principais leituras do preview:
 - `Banana`, `Bag of Organic Bananas` e `Organic Strawberries` aparecem como produtos mais comprados;
 - produtos recorrentes como `Banana` e `Bag of Organic Bananas` lideram a taxa de recompra;
 - `produce` e `dairy eggs` concentram maior volume e relevancia de recompra;
-- a area de previsao de proxima compra ja permite selecionar um usuario e exibir recomendacoes de recompra.
+- a area de afinidade permite escolher um produto e descobrir quais itens tendem a sair juntos;
+- a analise por horario permite comparar quais produtos vendem mais em horarios como 09:00 e 17:00;
+- a tabela dinamica cruza produto base, produto combinado, chance de compra conjunta, lift e volume no horario selecionado;
+- a area de previsao de proxima compra permite selecionar um usuario e exibir recomendacoes de recompra/complemento.
 
 Mais detalhes: [docs/dashboard_results.md](docs/dashboard_results.md)
 
@@ -150,7 +153,12 @@ Ele exibira:
 - evolucao da ingestao simulada;
 - produtos e departamentos mais comprados;
 - produtos mais recomprados;
+- afinidade entre produtos, como "quem compra banana tambem tende a comprar...";
+- os dois produtos com maior chance de combinar com o item escolhido;
+- grupos de produtos que mais saem juntos;
 - comportamento por dia da semana e hora;
+- produto mais vendido em um horario selecionado, como 09:00 ou 17:00;
+- tabela dinamica com filtros por produto, horario e quantidade de resultados;
 - perfil de recompra por usuario;
 - previsao de proxima compra e recomendacoes;
 - data/hora da ultima atualizacao do pipeline.
